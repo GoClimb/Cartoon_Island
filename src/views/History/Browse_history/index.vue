@@ -1,12 +1,12 @@
 <template>
-  <div id="app">
-    <router-view />
+  <div>
+    <h1>历史</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'Browse_history'
 }
 </script>
 

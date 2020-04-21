@@ -1,15 +1,11 @@
 <template>
-  <div id="app">
-    <router-view />
+  <div class="swiper-slide">
+    <slot />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'SwiperSlide'
 }
 </script>
-
-<style>
-
-</style>
