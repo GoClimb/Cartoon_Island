@@ -2,18 +2,18 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import store from '@/store'
 
-import Home from '@/views/Home'
-import Classify from '@/views/Classify'
-import History from '@/views/History'
-import Browsehistory from '@/views/History/Browse_history'
-import Favorite from '@/views/History/Favorite'
-import Login from '@/views/Login'
-import Ranking from '@/views/Ranking'
-import Mine from '@/views/Mine'
-import Search from '@/views/Search'
-import Vip from '@/views/Vip'
-import SearchResult from '@/views/Search-Result'
-import City from '@/views/City'
+// const Home = () => import('@/views/Home')
+// const Classify = () => import('@/views/Classify')
+// const History = () => import('@/views/History')
+// const Browsehistory = () => import('@/views/History/Browse_history')
+// const Favorite = () => import('@/views/History/Favorite')
+// const Login = () => import('@/views/Login')
+// const Ranking = () => import('@/views/Ranking')
+// const Mine = () => import('@/views/Mine')
+// const Search = () => import('@/views/Search')
+// const Vip = () => import('@/views/Vip')
+// const SearchResult = () => import('@/views/Search-Result')
+// const City = () => import('@/views/City')
 
 Vue.use(VueRouter)
 const router = new VueRouter({
@@ -24,31 +24,31 @@ const router = new VueRouter({
     },
     {
       path: '/home',
-      component: Home
+      component: () => import('@/views/Home')
     },
     {
       path: '/classify',
-      component: Classify
+      component: () => import('@/views/Classify')
     },
     {
       path: '/ranking',
-      component: Ranking
+      component: () => import('@/views/Ranking')
     },
     {
       path: '/vip',
-      component: Vip
+      component: () => import('@/views/Vip')
     },
     {
       path: '/history',
-      component: History,
+      component: () => import('@/views/History'),
       children: [
         {
           path: 'browse_history',
-          component: Browsehistory
+          component: () => import('@/views/History/Browse_history')
         },
         {
           path: 'favorite',
-          component: Favorite
+          component: () => import('@/views/History/Favorite')
         },
         {
           path: '',
@@ -58,23 +58,23 @@ const router = new VueRouter({
     },
     {
       path: '/login',
-      component: Login
+      component: () => import('@/views/Login')
     },
     {
       path: '/mine',
-      component: Mine
+      component: () => import('@/views/Mine')
     },
     {
       path: '/search',
-      component: Search
+      component: () => import('@/views/Search')
     },
     {
       path: '/search-result',
-      component: SearchResult
+      component: () => import('@/views/Search-Result')
     },
     {
       path: '/city',
-      component: City
+      component: () => import('@/views/City')
     }
   ]
 })

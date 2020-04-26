@@ -1,7 +1,7 @@
 <template>
   <div class="page-home" ref='aa'>
     <IndexHeader></IndexHeader>
-    <p>当前城市:{{cityName}}</p>
+    <p class="city">当前城市:{{cityName}}</p>
     <div class="index-main">
       <Swiper class="index-swiper" :loop="true" :autoplay='4000' v-if="bannerList.length > 0">
         <SwiperSlide v-for="item in bannerList" :key="item.id">
@@ -82,6 +82,10 @@ export default {
   flex-direction: column;
   height: 100%;
 
+  .city {
+    font-size: 20px;
+    font-weight: normal;
+  }
   .index-main {
     flex: 1;
     overflow-y: auto;

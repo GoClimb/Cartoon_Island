@@ -38,7 +38,7 @@
           <div class="title font-26">
             <span class="title-title">最近搜索</span>
             <span class="title-btn">
-              <span class="icon-del"></span>
+              <span class="icon-del" @click='delHistory'></span>
             </span>
           </div>
           <div class="history-content font-28">
@@ -77,7 +77,6 @@ export default {
   methods: {
     getHotSearch () {
       getHotSearch().then(res => {
-        console.log(res)
         this.hotSearch = res.info.hotWordsList
       })
     },
@@ -123,6 +122,11 @@ export default {
           keyword
         }
       })
+    },
+
+    delHistory () {
+      this.historySearch = []
+      window.localStorage.removeItem('search')
     }
   },
 

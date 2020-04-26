@@ -8,11 +8,12 @@
       </div>
       <span class="title-more font-24">更多 &gt;</span>
     </div>
-    <div class="recommend-type-1" v-if='info.comicsviewtype === 1'>
+
+    <div class="recommend-type-1" v-if='info.comicsviewtype === 1' >
       <div class="item" v-for='item in info.comicslist' :key='item.bigbook_id'>
         <img
           class="item-pic"
-          :src="JSON.parse(item.extension).xsyzfx"
+          v-lazy="JSON.parse(item.extension).xsyzfx"
         />
         <p class="item-name font-28">{{item.bigbook_name}}</p>
         <p class="item-text font-24">{{JSON.parse(item.extension).recommendwords}}</p>
@@ -24,7 +25,7 @@
       <div class="item" v-for='item in info.comicslist' :key='item.bigbook_id'>
         <img
           class="item-pic"
-          :src="item.coverurl"
+          v-lazy="item.coverurl"
         />
         <p class="item-title font-28">{{item.bigbook_name}}</p>
         <p class="item-text font-24">{{item.key_name}}</p>
@@ -35,7 +36,7 @@
       <div class="item" v-for='item in info.comicslist' :key='item.bigbook_id'>
         <img
           class="item-pic"
-          :src="JSON.parse(item.extension).scfk344_202"
+          v-lazy="JSON.parse(item.extension).scfk344_202"
         />
         <div class="ranking-group">
           <div class="item-ranking item-ranking-1"></div>

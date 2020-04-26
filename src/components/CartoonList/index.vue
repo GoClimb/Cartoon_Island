@@ -2,8 +2,8 @@
   <section class="classify-list">
     <div class="list-item" v-for="(item, index) in info" :key="item.id">
 
-      <div class="item-pic" :style="`background-image: url('${item.coverurl}')`"></div>
-
+      <!-- <div class="item-pic" :style="`background-image: url('${item.coverurl}')`"></div> -->
+      <div class="item-pic" v-lazy:background-image='item.coverurl'></div>
       <div class="item-info">
         <div class="info-book font-30">{{item.name}}</div>
         <div class="info-author font-26">作者：{{item.author}}</div>
