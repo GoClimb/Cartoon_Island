@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '@/store'
 
 import Home from '@/views/Home'
 import Classify from '@/views/Classify'
@@ -11,6 +12,8 @@ import Ranking from '@/views/Ranking'
 import Mine from '@/views/Mine'
 import Search from '@/views/Search'
 import Vip from '@/views/Vip'
+import SearchResult from '@/views/Search-Result'
+import City from '@/views/City'
 
 Vue.use(VueRouter)
 const router = new VueRouter({
@@ -64,8 +67,31 @@ const router = new VueRouter({
     {
       path: '/search',
       component: Search
+    },
+    {
+      path: '/search-result',
+      component: SearchResult
+    },
+    {
+      path: '/city',
+      component: City
     }
   ]
+})
+
+router.beforeEach((to, from, next) => {
+  // console.log(store)
+  // console.log(to)
+  if (!store.state.city.curCity && to.path !== '/city') {
+    next({
+      path: '/city',
+      query: {
+        redirect: to.path
+      }
+    })
+  } else {
+    next()
+  }
 })
 
 export default router
