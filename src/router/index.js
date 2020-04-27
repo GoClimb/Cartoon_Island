@@ -24,19 +24,23 @@ const router = new VueRouter({
     },
     {
       path: '/home',
-      component: () => import('@/views/Home')
+      component: () => import('@/views/Home'),
+      meta: { enterActiveClass: '', leaveActiveClass: 'animated delay-1s' }
     },
     {
       path: '/classify',
-      component: () => import('@/views/Classify')
+      component: () => import('@/views/Classify'),
+      meta: { enterActiveClass: 'animated slideInRight', leaveActiveClass: 'animated slideOutRight' }
     },
     {
       path: '/ranking',
-      component: () => import('@/views/Ranking')
+      component: () => import('@/views/Ranking'),
+      meta: { enterActiveClass: 'animated slideInRight', leaveActiveClass: 'animated slideOutRight' }
     },
     {
       path: '/vip',
-      component: () => import('@/views/Vip')
+      component: () => import('@/views/Vip'),
+      meta: { enterActiveClass: 'animated slideInRight', leaveActiveClass: 'animated slideOutRight' }
     },
     {
       path: '/history',
@@ -58,23 +62,28 @@ const router = new VueRouter({
     },
     {
       path: '/login',
-      component: () => import('@/views/Login')
+      component: () => import('@/views/Login'),
+      meta: { enterActiveClass: 'animated slideInRight', leaveActiveClass: 'animated slideOutRight' }
     },
     {
       path: '/mine',
-      component: () => import('@/views/Mine')
+      component: () => import('@/views/Mine'),
+      meta: { enterActiveClass: 'animated slideInRight', leaveActiveClass: 'animated slideOutRight' }
     },
     {
       path: '/search',
-      component: () => import('@/views/Search')
+      component: () => import('@/views/Search'),
+      meta: { enterActiveClass: 'animated slideInRight', leaveActiveClass: 'animated slideOutRight' }
     },
     {
       path: '/search-result',
-      component: () => import('@/views/Search-Result')
+      component: () => import('@/views/Search-Result'),
+      meta: { enterActiveClass: 'animated slideInRight', leaveActiveClass: 'animated slideOutRight' }
     },
     {
       path: '/city',
-      component: () => import('@/views/City')
+      component: () => import('@/views/City'),
+      meta: { enterActiveClass: 'animated slideInRight', leaveActiveClass: 'animated slideOutRight' }
     }
   ]
 })

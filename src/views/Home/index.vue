@@ -81,6 +81,7 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100%;
+  z-index: 1 !important;
 
   .city {
     font-size: 20px;
